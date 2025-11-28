@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Space | IT Consultant & Developer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="theme-bg-main theme-text-main min-h-screen flex flex-col">
+
+    <!-- REMOVED FIXED BUTTON FROM HERE -->
+
+    <!-- NAVBAR -->
+    <nav
+        class="theme-bg-card/80 backdrop-blur-sm sticky top-0 z-40 border-b theme-border transition-colors duration-500">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight flex items-center gap-2">
+                <i class="ph-duotone ph-terminal-window theme-text-primary text-2xl"></i>
+                <span>Code & Craft<span class="theme-text-accent text-2xl">.</span></span>
+            </div>
+
+            <!-- Added items-center to align text and button -->
+            <div class="flex gap-6 text-sm font-medium theme-text-muted items-center">
+                <a href="#" class="hover:theme-text-primary transition hidden sm:block">About</a>
+                <a href="#" class="hover:theme-text-primary transition hidden sm:block">Services</a>
+                <a href="#" class="hover:theme-text-primary transition">Blog</a>
+
+                <!-- MOVED TOGGLE BUTTON HERE -->
+                <button onclick="toggleTheme()"
+                    class="w-9 h-9 rounded-full theme-bg-main theme-border border flex items-center justify-center hover:scale-105 transition relative overflow-hidden ml-2"
+                    aria-label="Toggle Theme">
+                    <!-- Sun Icon (Shows in Dark Mode) -->
+                    <i id="icon-sun"
+                        class="ph-fill ph-sun text-yellow-400 text-lg absolute transition-all duration-500 opacity-0 rotate-90 scale-0"></i>
+                    <!-- Moon Icon (Shows in Light Mode) -->
+                    <i id="icon-moon"
+                        class="ph-fill ph-moon-stars text-slate-600 text-lg absolute transition-all duration-500 opacity-100 rotate-0 scale-100"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main class="flex-grow">
+        <section class="max-w-4xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <!-- Badge using Accent Color -->
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full theme-bg-accent-light theme-text-accent text-xs font-bold tracking-wide border theme-border-accent/20">
+                    <span class="w-2 h-2 rounded-full theme-bg-accent animate-pulse"></span>
+                    Open for Work
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                    สวัสดีครับ ผม <span class="text-gradient">DevName</span>
+                </h1>
+                <p class="text-lg theme-text-muted leading-relaxed">
+                    ผมทำงานเป็น IT Consultant, Instructor และ Developer ที่ชอบเปลี่ยนเรื่องยากให้เข้าใจง่าย <br>
+                    <span class="theme-text-main font-medium">"จริงใจ ให้ความรู้ คู่การลงมือทำ"</span>
+                </p>
+                <div class="flex gap-4 pt-2">
+                    <!-- Primary Button -->
+                    <a href="#blog"
+                        class="px-6 py-3 rounded-lg theme-bg-primary text-white font-medium hover:opacity-90 transition shadow-lg shadow-blue-500/20 flex items-center gap-2">
+                        อ่านบทความ <i class="ph-bold ph-read-cv-logo"></i>
+                    </a>
+                    <!-- Secondary Button (Outline) -->
+                    <a href="#"
+                        class="px-6 py-3 rounded-lg theme-bg-card theme-border border theme-text-main font-medium hover:bg-gray-50 transition dark:hover:bg-gray-800 flex items-center gap-2">
+                        คุยกันก่อนได้ครับ <i class="ph-bold ph-chat-circle-dots theme-text-accent"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center">
+                <!-- Decorative Elements -->
+                <div
+                    class="absolute -top-4 -right-4 w-20 h-20 theme-bg-accent/20 rounded-full blur-xl transition-colors duration-500">
+                </div>
+                <div
+                    class="absolute -bottom-4 -left-4 w-32 h-32 theme-bg-primary/20 rounded-full blur-xl transition-colors duration-500">
+                </div>
+
+                <!-- Profile Image Area -->
+                <div
+                    class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden theme-bg-primary-light relative rotate-3 hover:rotate-0 transition duration-500 shadow-2xl border-4 theme-border">
+                    <div class="absolute inset-0 flex items-center justify-center theme-text-primary opacity-20">
+                        <i class="ph ph-code text-9xl"></i>
+                    </div>
+                    <img src="/api/placeholder/400/400" alt="Profile"
+                        class="w-full h-full object-cover mix-blend-multiply opacity-80"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT I DO -->
+        <section class="theme-bg-card py-20 transition-colors duration-500 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 left-0 w-full h-1 theme-bg-primary opacity-10"></div>
+
+            <div class="max-w-4xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-bold mb-2">บทบาทที่ผมทำ</h2>
+                    <p class="theme-text-muted text-sm">เน้นคุยง่าย ทำงานจริง และส่งมอบงานคุณภาพ</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Instructor -->
+                    <div class="p-6 rounded-2xl theme-bg-main theme-border border card-hover group">
+                        <div
+                            class="w-12 h-12 rounded-xl theme-bg-accent-light theme-text-accent flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                            <i class="ph-fill ph-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Instructor</h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            สอนจากประสบการณ์จริง ไม่กั๊กความรู้ เน้นให้ผู้เรียนเข้าใจ Concept เพื่อไปต่อยอดเองได้
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Consultant -->
+                    <div class="p-6 rounded-2xl theme-bg-main theme-border border card-hover group">
+                        <div
+                            class="w-12 h-12 rounded-xl theme-bg-primary-light theme-text-primary flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                            <i class="ph-fill ph-strategy"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">IT Consultant</h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            ให้คำปรึกษาอย่างตรงไปตรงมา เลือก Tech Stack ที่ "เหมาะสม" ไม่ใช่แค่ "ทันสมัย"
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Developer -->
+                    <div class="p-6 rounded-2xl theme-bg-main theme-border border card-hover group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition dark:bg-slate-700 dark:text-slate-300">
+                            <i class="ph-fill ph-terminal-window"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Developer</h3>
+                        <p class="theme-text-muted text-sm leading-relaxed">
+                            เขียนโค้ดที่ Clean และ Maintain ง่าย เพื่อให้โปรเจกต์ของคุณยั่งยืนในระยะยาว
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG / INTERESTS -->
+        <section id="blog" class="max-w-4xl mx-auto px-6 py-20">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold flex items-center gap-2">
+                        <i class="ph-duotone ph-book-bookmark theme-text-accent"></i>
+                        เรื่องที่ผมสนใจช่วงนี้
+                    </h2>
+                </div>
+                <a href="#" class="text-sm theme-text-primary font-medium hover:underline flex items-center gap-1">
+                    ดูทั้งหมด <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Blog Item 1 -->
+                <article class="group cursor-pointer">
+                    <div class="h-48 rounded-xl theme-bg-card theme-border border overflow-hidden mb-4 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md text-xs font-bold shadow-sm theme-text-main flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full theme-bg-accent"></span> Tech Trend
+                        </div>
+                        <div
+                            class="w-full h-full theme-bg-primary-light flex items-center justify-center theme-text-primary opacity-30 group-hover:scale-105 transition duration-500">
+                            <i class="ph ph-robot text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs theme-text-muted flex items-center gap-2">
+                            <i class="ph ph-calendar"></i> 25 Nov 2024
+                        </span>
+                        <h3 class="font-bold text-lg group-hover:theme-text-primary transition-colors">
+                            จาก Dev สู่ Consultant: สิ่งที่ต้องปรับตัว
+                        </h3>
+                        <p class="theme-text-muted text-sm line-clamp-2">
+                            แชร์ประสบการณ์จริงของการเปลี่ยนบทบาท และทำไม Soft Skill ถึงสำคัญกว่า Code...
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Blog Item 2 -->
+                <article class="group cursor-pointer">
+                    <div class="h-48 rounded-xl theme-bg-card theme-border border overflow-hidden mb-4 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md text-xs font-bold shadow-sm theme-text-main flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full theme-bg-primary"></span> Coding
+                        </div>
+                        <div
+                            class="w-full h-full theme-bg-accent-light flex items-center justify-center theme-text-accent opacity-30 group-hover:scale-105 transition duration-500">
+                            <i class="ph ph-brackets-curly text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs theme-text-muted flex items-center gap-2">
+                            <i class="ph ph-calendar"></i> 18 Nov 2024
+                        </span>
+                        <h3 class="font-bold text-lg group-hover:theme-text-primary transition-colors">
+                            เขียนโค้ดให้เพื่อนร่วมทีมรัก (Readable Code)
+                        </h3>
+                        <p class="theme-text-muted text-sm line-clamp-2">
+                            เทคนิคง่ายๆ ในการตั้งชื่อตัวแปรและแบ่ง Function ที่จะทำให้ชีวิตทีมดีขึ้น...
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="theme-bg-card border-t theme-border py-12 transition-colors duration-500">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-xl font-bold mb-6">ช่องทางติดต่อ</h3>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#"
+                    class="w-10 h-10 rounded-full theme-bg-main theme-border border flex items-center justify-center text-xl theme-text-muted hover:theme-text-primary hover:border-blue-400 transition hover:-translate-y-1"><i
+                        class="ph-fill ph-linkedin-logo"></i></a>
+                <a href="#"
+                    class="w-10 h-10 rounded-full theme-bg-main theme-border border flex items-center justify-center text-xl theme-text-muted hover:theme-text-primary hover:border-gray-600 transition hover:-translate-y-1"><i
+                        class="ph-fill ph-github-logo"></i></a>
+                <a href="#"
+                    class="w-10 h-10 rounded-full theme-bg-main theme-border border flex items-center justify-center text-xl theme-text-muted hover:theme-text-accent hover:border-orange-400 transition hover:-translate-y-1"><i
+                        class="ph-fill ph-envelope-simple"></i></a>
+            </div>
+            <p class="theme-text-muted text-sm">
+                © 2025 Designed & Developed by Me. <br>
+                <span class="text-xs opacity-75">Built with Passion & Coffee.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
